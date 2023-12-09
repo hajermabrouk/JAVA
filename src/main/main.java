@@ -1,5 +1,9 @@
 package main;
-import entities.*;
+
+
+import entities.Employe;
+import entities.IGestion;
+import entities.SocieteArrayList;
 
 
 import java.util.ArrayList;
@@ -24,7 +28,6 @@ public class main {
         employes.displayEmploye();  // affichage trie par id
         employes.trierEmployeParNomDépartementEtGrade();
         employes.displayEmploye();    //affichage trie par nomdep et grade
-         // Prosit 10
          Departement departement1 = new Departement(1,"info",10);
         Departement departement2 = new Departement(2,"gestion",18);
         Departement departement3 = new Departement(3,"etudiants",100);
@@ -44,5 +47,6 @@ public class main {
         gestiondep.displayDepartement();
         System.out.println("La liste triée est:");
         System.out.println(gestiondep.trierDepartementById());
+
     }
 }
