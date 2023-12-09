@@ -5,7 +5,7 @@ public class Zoo {
     private Animal[] animals;
     private String name;
     private String city;
-    private final int nbrCages = 25; // instruction 14
+    private final int nbrCages = 3; // instruction 14
     private final int nbrAquatic = 10;
      //instruction 25
     public Aquatic[] aquaticAnimals= new Aquatic[nbrAquatic];
@@ -51,16 +51,20 @@ public class Zoo {
         this.city = city;
     }
 
-    // instruction 10
-    public boolean addAnimal(Animal animal) {
+    // instruction 32/33/34
+    public void addAnimal(Animal animal) throws ZooFullException , InvalidAgeException {
 
-        for (int i = 0; i < nbrCages; i++) {
-            if (animals[i] == null) {
-                animals[i] = animal;
-                return true;
+        if(totalAnimals()<nbrCages) {
+            if (animal.getAge() < 0) {
+                throw new InvalidAgeException("l'age ne doit pas etre négatif");
             }
+            animals[totalAnimals()] = animal;
+            int nbr = totalAnimals();
+            nbr++;
+        }else {
+          throw new ZooFullException("le zoo est plein");
         }
-        return false;
+
     }
 
     // instruction 8
@@ -169,18 +173,14 @@ public class Zoo {
             if (aquaticAnimals[i] == null) {
                 aquaticAnimals[i] = aquatic;
                 System.out.println(" aquatic animal ajouté");
-
             }
+
         }
+
+
     }
 
-    public void afficherAquatic() {
-        for (int i = 0; i <10; i++) {
-            if (aquaticAnimals[i] != null) {
-                System.out.println(aquaticAnimals[i]);
-            }
-        }
-    }
+
     //instruction 27
     public void swimAquatic() {
         for (Aquatic aquatic : aquaticAnimals) {
@@ -189,7 +189,7 @@ public class Zoo {
     }
 
     public float maxPenguinSwimmingDepth() {   //instruction 29
-        float maxDepth = 0.f;
+        float maxDepth = 0.0f;
         for (Aquatic aquatic : aquaticAnimals) {
             if (aquatic instanceof Penguin) {
                 if (((Penguin) aquatic).swimmingDepth > maxDepth)
@@ -211,6 +211,7 @@ public class Zoo {
         System.out.println("le nombre de Penguin:" + nbrPenguin);
         System.out.println("le nombre de Dauphin:" + nbrDauphin);
     }
+
 }
 
 

@@ -1,136 +1,110 @@
 package tn.esprit.gestionZoo.main;
+
 import tn.esprit.gestionZoo.entities.*;
 
-import static tn.esprit.gestionZoo.entities.Zoo.countAnimalCree;
-import static tn.esprit.gestionZoo.entities.Zoo.countAquaticCree;
+import java.sql.SQLOutput;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class ZooManagment {
+
+public class Main {
 
     public static void main(String[] args) {
+        Zoo myZoo1 = new Zoo("belvidère", "tunis"); //instruction 7
+        Zoo myZoo2 = new Zoo("zoo", "Ariana");
+        Zoo myZoo5 = new Zoo();
+        myZoo5.setName("");  // tester instructin 18
+        myZoo5.setCity("tunis");
+        myZoo1.displayZoo(); // instruction 8
+        System.out.println(myZoo1);
+        System.out.println(myZoo1.toString());
+        Animal lion = new Animal("chiens", "loulou", 1, true); // instruction 7
+        System.out.println(lion); // // instruction 9
+        System.out.println(lion.toString()); // instruction 9
+        Animal chat = new Animal("chats", "simba", -2, true); // pour tester instruction de l'exeption age
+        Animal chien = new Animal("chiots", "foufou", 2, true);
+        Animal chat2 = new Animal("chiots", "simba2", 2, true);
+        Animal chien2 = new Animal("chiots", "foufou2", 3, true);
+        Animal chien3 = new Animal();//  tester instruction 18
+        chien3.setName("foufou3");
+        chien3.setFamily("chiots");
+        chien3.setAge(-2);  // tester instruction 18
+        chien3.setMammal(true);
+        //System.out.println(myZoo1.addAnimal(lion));
+        //  System.out.println(myZoo2.addAnimal(chat));
+        myZoo1.afficherAnimal(); // appel instruction 11
+        System.out.println("l'indice est :" + myZoo1.searchAnimal(chat)); //  instruction 11
+        System.out.println(myZoo1.addUniq(chien)); //instrurctin 12
+        System.out.println(myZoo1.addUniq(lion)); // instrurctin 12
+        System.out.println(myZoo1.addUniq(chat2));
+        System.out.println(myZoo1.addUniq(chien2));
+        System.out.println(myZoo1.removeAnimal(lion));
+        myZoo1.afficherAnimal();
+        System.out.println(myZoo1.isZooFull());
+        System.out.println("le zoo qui contient plus d'animaux :" + Zoo.CamparerZoo(myZoo1, myZoo2));
+        // instruction 21
+        /*Aquatic aquatic1= new Aquatic();
+        Dolphin dolphin1 = new Dolphin();
+        Penguin penguin1 = new Penguin();
+        Terrestrial terrestrial1= new Terrestrial();*/
+        //instruction 22
+        //Aquatic aquatic1= new Aquatic("chats", "simba", 2, true,"habitat");
+        Dolphin dolphin1 = new Dolphin("poisson", "foufou", 2, true, "habitat", 15.5f);
+        Penguin penguin1 = new Penguin("penguin", "foufou", 2, true, "habitat", 1.5f);
+        Dolphin dolphin2 = new Dolphin("poisson2", "foufou", 2, true, "habitat", 15.5f);
+        Penguin penguin2 = new Penguin("penguin", "foufou", 3, true, "habitat", 2.5f);
 
-        /***************************Create Instance Animal****************************/
-        Animal lion=new Animal("cat","Simba",10,true); //ajouter dans tableau
-        //lion.displayAnimal();
-        Animal tigre=new Animal("cat","mimi",2,true); //ajouter dans tableau
-        //tigre.displayAnimal();
-        Animal mimi=new Animal("cato","mimo",3,true); //n'est pas dans tableau
+        Terrestrial terrestrial1 = new Terrestrial("chats", "simba", 2, true, 4);
+        // instruction 23
+        //System.out.println(aquatic1.toString());
+        System.out.println(dolphin1.toString());
+        System.out.println(penguin1.toString());
+        //instruction 24
+        //aquatic1.swim();
+        //dolphin2.swim();
+        //dolphin1.swim();
+        //penguin1.swim();
+
+        myZoo1.addAquaticAnimal(penguin1);//instruction 26
+        myZoo1.addAquaticAnimal(penguin2);//instruction 26
+        myZoo1.addAquaticAnimal(dolphin2);
 
 
+        System.out.println(myZoo1.maxPenguinSwimmingDepth()); // instruction 29
+        myZoo1.displayNumberOfAquaticsByType(); // instruction 30
+        System.out.println(penguin2.equals(dolphin1)); //instruction 31
+        System.out.println(dolphin1.equals(dolphin1));
+        System.out.println(penguin1.equals(penguin1));
 
-        /***************************Create Instance Zoo****************************/
-        Zoo bilvidaire=new Zoo(10,"bilvidaire","tunis");
-        Zoo Africa=new Zoo(24,"Africa","bizert");
-        //System.out.println(bilvidaire.toString());  //display with methode toString
-        //System.out.println(bilvidaire);           //we can also display it with appel Classname
-
-                                    //Compare 2 zoo
-        Zoo zooWithMoreAnimals = Zoo.comparerZoo(bilvidaire, Africa);
-        System.out.println("Zoo a plus d'animaux est: " + zooWithMoreAnimals.getName());
-
-
-
-        /***************************Add annimal with static methode****************************/
-        FullAnimal(tigre, bilvidaire);
-        FullAnimal(mimi, bilvidaire);
-        FullAnimal(lion, bilvidaire); //declarer fonction static
-
-
-        /*************************** Show Animal table after delet************************************/
-        boolean removed = bilvidaire.removeAnimal(lion);
-        if (removed) {
-            System.out.println("L'annimal "+lion.getName()+"a été supprimé du zoo.");
-            System.out.println("Animaux dans le zoo après la suppression :");
-            System.out.println(bilvidaire);
-        } else {
-            System.out.println("L'animal n'a pas pu être trouvé ou supprimé du zoo.");
+        // instruction 32/33/34
+        try {
+            myZoo2.addAnimal(chien);
+            System.out.println(" Nombre d'animaux dans le Zoo: " + myZoo2.totalAnimals());
+            myZoo2.addAnimal(chien2);
+            System.out.println(" Nombre d'animaux dans le Zoo: " + myZoo2.totalAnimals());
+            myZoo2.addAnimal(chien3);
+            System.out.println(" Nombre d'animaux dans le Zoo: " + myZoo2.totalAnimals());
+            myZoo2.addAnimal(lion);
+            System.out.println(" Nombre d'animaux dans le Zoo: " + myZoo2.totalAnimals());
+        } catch (ZooFullException e) {
+            System.err.println("Erreur 1 : " + e.getMessage());
+        } catch (InvalidAgeException e) {
+            System.err.println("Erreur2 d'age : " + e.getMessage());
         }
 
-
-        /******************************** Prosit 5 : heritage **********************************/
-        /******************************** instance Avec Heritage **********************************/
-
-        /******************************************Default instance **************************************************/
-        Dolphin dolphin=new Dolphin();
-        Penguin penguin=new Penguin();
-        Aquatic aquatic =new Aquatic();
-        //Terrestrial terrestrial=new Terrestrial();
-
-        /****************************************** instance charge**************************************************/
-        Dolphin dolphinParam=new Dolphin("Dophin","boubou",2,true,"habitat",33);
-        Dolphin dolphinParam2=new Dolphin("Dophin","boubou",2,true,"habitat",37);
-        Dolphin dolphinParam3=new Dolphin("Dophin","laboon",2,false,"habitat",30);
-
-        Penguin penguinParam =new Penguin("Penguin","penpen",3,true,"habitat",30);
-        Aquatic aquaticParam = new Aquatic("Family","penpen",4,true,"habitat");
-        //Terrestrial terrestrialParam= new Terrestrial("Terrestrial","tererstre",5,true,4);
-
-
-        /********************************Methode with heritage **************************************************/
-        System.out.println(dolphinParam);
-        System.out.println(penguinParam);
-
-
-       // dolphinParam.swim();
-       // penguinParam.swim();
-        aquaticParam.swim();
-
-        /******************************** Prosit 6  **********************************/
-        /**************************Add aquatic animal ***********************/
-        FullAquaticAnimal(dolphinParam,bilvidaire);
-        FullAquaticAnimal(penguinParam,bilvidaire);
-        //int sommeAnimals=countAnimalCree+countAquaticCree;
-        System.out.println("nbr annimals cree:"+ countAnimalCree);
-
-        // Appel de la méthode showAllswim pour afficher la méthode swim() de tous les animaux aquatiques
-        bilvidaire.showAllswim();//on remarque dans la classe penguin le resultat est this aquatic animal is swiming
-
-
-        System.out.println("Max Penguin Swimming Depth : "+bilvidaire.maxPenguinSwimmingDepth());
-        bilvidaire.displayNumberOfAquaticsByType();//nombre des dolphin et des penguins
-
-        /************************ Use Equals ************************/
-        System.out.println(dolphinParam3.equals(dolphinParam));
-        System.out.println(dolphinParam2.equals(dolphinParam));
-
-
-    }
-
-
-
-
-    /******************************************Static main methode for adding annimal **************************************************/
-    private static void FullAnimal(Animal annimal, Zoo bilvidaire) {
-        if (!bilvidaire.isZooFull()) {
-            boolean addAni2=bilvidaire.addAnimal(annimal);
-            if (addAni2){
-                System.out.println("l'annimal "+annimal.getName()+" est ajouté");
-            }else {
-                System.out.println("l'annimal "+annimal.getName()+" exist déja ou zoo complet ");
-            }
-        }else{
-            System.out.println("Le zoo est plein. Impossible d'ajouter un nouvel animal.");
+        try {
+            myZoo1.addAnimal(chat);
+            System.out.println(" Nombre d'animaux dans le Zoo2: " + myZoo1.totalAnimals());
+        } catch (ZooFullException e) {
+            System.err.println("Erreur1  : " + e.getMessage());
+        } catch (InvalidAgeException e) {
+            System.err.println("Erreur2 d'âge : " + e.getMessage());
         }
-
-
-
-    }
-
-    private static void FullAquaticAnimal(Aquatic annimal, Zoo bilvidaire) {
-        if (!bilvidaire.isZooFull()) {
-            boolean addAni2=bilvidaire.addAquaticAnimal(annimal);
-            if (addAni2){
-                System.out.println("l'annimal aquatic "+annimal.getName()+" est ajouté");
-            }else {
-                System.out.println("Impossible d'ajouter un aquatic,le nombre maximum des animals aquatique sont 10");
-            }
-        }else{
-            System.out.println("Le zoo est plein. Impossible d'ajouter un nouvel animal.");
-        }
-
-
+        //  myZoo1.swimAquatic(); // instruction 27
+        //instruction 38 :
+        penguin1.eatMeat(Food.MEAT);
+        penguin2.eatMeat(Food.PLANT);
+        terrestrial1.eatPlantAndMeet(Food.BOTH);
+        terrestrial1.eatMeat(Food.PLANT);
+        dolphin2.eatMeat(Food.MEAT);
 
     }
-
 }
