@@ -1,6 +1,6 @@
 package tn.esprit.gestionZoo.entities;
 
-public class Terrestrial extends Animal {
+public final class Terrestrial extends Animal {
    protected int nbrLegs;
    Terrestrial(){}
    public Terrestrial(String family, String name, int age, boolean isMammal,int nbrLegs)

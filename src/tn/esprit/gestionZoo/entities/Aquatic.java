@@ -1,61 +1,33 @@
 package tn.esprit.gestionZoo.entities;
 
-public class Aquatic extends Animal{
-private String habitat;
+public non-sealed abstract class  Aquatic extends Animal{
 
-public Aquatic(){
-    //System.out.println("Aquatic created");
-};
+   protected String habitat ;
+   public Aquatic(){}
+    public abstract void swim();  // instruction 28
+  public Aquatic(String family, String name, int age, boolean isMammal,String habitat){
+       super(family,name,age,isMammal);
+       this.habitat=habitat;
+   }
 
-    public Aquatic(String family, String name, int age, boolean isMammal,String habitat) {
-        super(family, name, age, isMammal);
-        this.habitat=habitat;
-    }
-
-    public String getHabitat() {
-        return habitat;
-    }
-
-    public void setHabitat(String habitat) {
-        this.habitat = habitat;
-    }
-
-    @Override
+    //instruction 23
+   @Override
     public String toString() {
-        return super.toString()+
-                "\n habitat=" + habitat ;
+        return super.toString()+" " +habitat;
     }
-
-    public void swim(){
-        if (this instanceof Penguin){
-            System.out.println("This Penguin animal is swimming.");
-        } else if (this instanceof Dolphin) {
-            System.out.println("This Dolphin animal is swimming.");
-        } else {
-            System.out.println("This Aquatic animal is swimming.");
-        }
-
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj){
-           return true;
-        }
-
-        if(this == null){
-            return false;
-        }
-
-        //getClass() lors de l'execution il va considerer que l'obj est Dolphin ou Penguin
-        //if(obj.getClass() == Aquatic.class){
-            //instance of donc il va considerer que obj est Aquatic
-            if(obj instanceof  Aquatic){
-            Aquatic aquatic=(Aquatic) obj;
-            return  aquatic.getName()==this.getName() && aquatic.getAge()==this.getAge() && aquatic.habitat==this.habitat;
-        }
-        return false;
-
+    // instruction 24
+    /* public void swim(){
+        System.out.println("This aquatic animal is swimming.");
+    } */
+    //instruction 31
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (null == object || getClass() != object.getClass()) return false;
+        Aquatic aquatic =(Aquatic) object;
+        return getAge() == aquatic.getAge() && getName().equals(aquatic.getName()) && habitat.equals(aquatic.habitat) ;
 
     }
 }
+
+
+
