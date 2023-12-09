@@ -1,6 +1,6 @@
 package tn.esprit.gestionZoo.entities;
 
-public class Animal {
+public sealed class Animal permits Aquatic,Terrestrial {
     private  String family;
     private   String name;
     private int age;
@@ -58,5 +58,4 @@ public class Animal {
     public String toString() {
         return family + " " + name + " " + age + " " + isMammal;
     }
-
 }
