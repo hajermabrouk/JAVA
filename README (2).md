@@ -1,3 +1,0 @@
-# JavaEsprit
-Prosit 2:
-
