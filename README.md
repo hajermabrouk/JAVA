@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Prosit 8 :
 
 Ce prosit concerne la création et l'implémentation d'interfaces ainsi que l'utilisation d'une énumération pour définir les types de nourriture pour différentes classes d'animaux.
@@ -10,4 +11,3 @@ Instruction 37 : Il est demandé d'implémenter l'interface Carnivore pour la cl
 
 Instruction 38 : Dans la méthode main, il est demandé de créer des objets de type Aquatic, Penguin, et Terrestrial, puis de tester les méthodes implémentées pour vérifier leur fonctionnement.
 
-Ce prosit vise à créer des interfaces pour définir les comportements alimentaires des animaux (carnivore, herbivore, omnivore) et à les implémenter dans différentes classes d'animaux, en utilisant une énumération pour spécifier le type de nourriture et tester ces implémentations dans la méthode principale.
