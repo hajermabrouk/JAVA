@@ -1,19 +1,12 @@
 # JavaEsprit
-Prosit 5 :
+Prosit: 7
 
-Ce prosit poursuit le développement du logiciel de gestion de zoo en Java en introduisant deux nouvelles familles d'animaux : Aquatiques et Terrestres. Chaque famille a des attributs spécifiques : les animaux aquatiques sont caractérisés par leur habitat, tandis que les animaux terrestres sont définis par le nombre de pattes. En outre, des sous-classes sont créées pour des animaux aquatiques spécifiques : le dauphin et le pingouin, chacun ayant des attributs supplémentaires spécifiques tels que la vitesse de nage et la profondeur de nage.
+Ce prosit aborde la gestion des exceptions pour assurer le bon déroulement de l'application même dans des circonstances exceptionnelles.
 
-**Instruction 20 :**
-Cette étape consiste à déclarer les attributs spécifiques des classes Animal, Aquatic et Terrestrial ainsi que des sous-classes Dolphin et Penguin.
+Instruction 32 : La méthode addAnimal(Animal animal) voit son type de retour modifié de boolean à void, supprimant ainsi les tests de vérification du zoo plein. Cela implique que l'ajout d'animaux sera effectué sans vérifier la capacité du zoo.
 
-**Instruction 21 :**
-Dans la méthode main, des instances de chaque classe sont créées en utilisant les constructeurs par défaut.
+Instruction 33 : Une classe d'exception personnalisée, ZooFullException, doit être créée pour gérer les situations où le zoo est plein. La méthode addAnimal doit utiliser cette nouvelle exception pour gérer l'ajout d'animaux dépassant la capacité du zoo. Des erreurs dans la méthode main doivent être corrigées pour afficher correctement le nombre d'animaux après chaque ajout, en tenant compte d'une réduction du nombre de cages à 3 pour les tests.
 
-**Instruction 22 :**
-Les constructeurs paramétrés doivent être créés dans les sous-classes Dolphin et Penguin tout en protégeant les attributs déclarés précédemment pour maintenir l'intégrité des données.
+Instruction 34 : Il est nécessaire d'interdire l'ajout d'animaux ayant un âge négatif en renvoyant une exception InvalidAgeException dédiée. Les erreurs dans la méthode main doivent être corrigées pour gérer cette nouvelle exception et garantir la bonne gestion des ajouts d'animaux.
 
-**Instruction 23 :**
-Il est nécessaire de redéfinir la méthode `toString()` dans les sous-classes pour inclure à la fois les attributs communs et les attributs spécifiques à chaque type d'animal. Ensuite, dans la méthode main, les objets créés précédemment doivent être affichés.
-
-**Instruction 24 :**
-La création d'une méthode `swim()` est demandée dans les classes Aquatic, Dolphin et Penguin pour afficher un message spécifique décrivant l'action de nage. Il faut ensuite appeler cette méthode pour des objets de types Aquatic, Dolphin et Penguin dans la méthode main pour observer leur comportement respectif.
+Ces instructions visent à améliorer la gestion des exceptions pour répondre aux cas exceptionnels qui pourraient compromettre le fonctionnement normal de l'application, en utilisant des exceptions personnalisées pour mieux gérer ces situations et maintenir la robustesse de l'application.
