@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 Prosit 8 :
 
 Ce prosit concerne la création et l'implémentation d'interfaces ainsi que l'utilisation d'une énumération pour définir les types de nourriture pour différentes classes d'animaux.
