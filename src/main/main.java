@@ -2,7 +2,18 @@ package main;
 import entities.*;
 
 
+
 import java.util.*;
+
+
+import entities.Employe;
+import entities.IGestion;
+import entities.SocieteArrayList;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class main {
     public static void main(String[] args) {
@@ -23,7 +34,7 @@ public class main {
         employes.displayEmploye();  // affichage trie par id
         employes.trierEmployeParNomDépartementEtGrade();
         employes.displayEmploye();    //affichage trie par nomdep et grade
-         // Prosit 10
+
          Departement departement1 = new Departement(1,"info",10);
         Departement departement2 = new Departement(2,"gestion",18);
         Departement departement3 = new Departement(3,"etudiants",100);
@@ -44,7 +55,6 @@ public class main {
         System.out.println("La liste triée est:");
         System.out.println(gestiondep.trierDepartementById());
 
-        //prosit 11
         AffectationHashMap map=new AffectationHashMap();
         map.ajouterEmployeDepartement(employe1,departement1);
         System.out.println("Map employés et Départements");
@@ -64,5 +74,6 @@ public class main {
         map.ajouterEmployeDepartement(employe2,departement4);
         System.out.println("map des départements et employés");
         System.out.println(map.trierMap());
+
     }
 }
