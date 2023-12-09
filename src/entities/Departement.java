@@ -61,4 +61,3 @@ public class Departement implements Comparable<Departement> {
     @Override
     public int hashCode(){
         return id+ nomDep.hashCode();  }
-}

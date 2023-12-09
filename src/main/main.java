@@ -3,7 +3,12 @@ import entities.*;
 
 
 import java.util.*;
+
+
+
+import java.util.*;
 import java.util.function.Consumer;
+
 
 public class main {
     public static void main(String[] args) {
@@ -24,7 +29,7 @@ public class main {
         employes.displayEmploye();  // affichage trie par id
         employes.trierEmployeParNomDépartementEtGrade();
         employes.displayEmploye();    //affichage trie par nomdep et grade
-         // Prosit 10
+
          Departement departement1 = new Departement(1,"info",10);
         Departement departement2 = new Departement(2,"gestion",18);
         Departement departement3 = new Departement(3,"etudiants",100);
@@ -45,7 +50,7 @@ public class main {
         System.out.println("La liste triée est:");
         System.out.println(gestiondep.trierDepartementById());
 
-//        prosit 11
+
         AffectationHashMap map=new AffectationHashMap();
         map.ajouterEmployeDepartement(employe1,departement1);
         System.out.println("Map employés et Départements");
@@ -65,7 +70,7 @@ public class main {
         map.ajouterEmployeDepartement(employe2,departement4);
         System.out.println("map des départements et employés");
         System.out.println(map.trierMap());
-        // Prosit 12
+
         StudentManagement studentManagement = new StudentManagement();
         List <Etudiant>students=new ArrayList<>();
         Etudiant etd1=new Etudiant(100,21,"Nawres");
@@ -86,5 +91,6 @@ public class main {
         List<Etudiant> listeSorted=studentManagement.sortStudentsById(students, (Etudiant etd6,Etudiant etd7)-> etd6.getAge()- etd7.getAge());
         System.out.println(listeSorted);
         studentManagement.convertToStream(students);
+
     }
 }
