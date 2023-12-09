@@ -1,27 +1,13 @@
-# JavaEsprit
-Prosit 6 :
+Prosit 8 :
 
-Ce prosit se concentre sur l'expansion de la logique de gestion des animaux aquatiques dans le logiciel de zoo en Java.
+Ce prosit concerne la création et l'implémentation d'interfaces ainsi que l'utilisation d'une énumération pour définir les types de nourriture pour différentes classes d'animaux.
 
-**Instruction 25 :**
-La classe Zoo doit maintenant inclure un tableau `aquaticAnimals` pour stocker jusqu'à 10 animaux aquatiques.
+Instruction 35 : Il est demandé de créer trois interfaces : Carnivore<T>, Herbivore<T>, et Omnivore<T>. Carnivore<T> définit la méthode void eatMeat(T meat), Herbivore<T> définit la méthode void eatPlant(T plant), et Omnivore<T> hérite des deux premières interfaces et définit la méthode void eatPlantAndMeet(T food).
 
-**Instruction 26 :**
-Une méthode `addAquaticAnimal(Aquatic aquatic)` doit être créée dans la classe Zoo pour ajouter des animaux aquatiques au tableau `aquaticAnimals`. Dans la méthode main, des animaux aquatiques doivent être ajoutés dans un zoo spécifique.
+Instruction 36 : La création d'une énumération, Food, est demandée, définissant trois valeurs : MEAT, PLANT, BOTH.
 
-**Instruction 27 :**
-Il est demandé d'appeler la méthode `swim()` pour tous les animaux aquatiques du zoo dans la méthode main et d'observer leur comportement.
+Instruction 37 : Il est demandé d'implémenter l'interface Carnivore pour la classe Aquatic en passant l'énumération Food en paramètre, et d'implémenter l'interface Omnivore pour la classe Terrestrial en utilisant également l'énumération Food. Il faut ensuite redéfinir les méthodes nécessaires dans ces classes.
 
-**Instruction 28 :**
-La méthode `swim()` de la classe Aquatic doit être modifiée pour devenir une méthode abstraite, obligeant ainsi sa redéfinition dans toutes les sous-classes.
+Instruction 38 : Dans la méthode main, il est demandé de créer des objets de type Aquatic, Penguin, et Terrestrial, puis de tester les méthodes implémentées pour vérifier leur fonctionnement.
 
-**Instruction 29 :**
-Une méthode `maxPenguinSwimmingDepth()` doit être créée dans la classe Zoo pour renvoyer la profondeur maximale de nage des pingouins dans le zoo.
-
-**Instruction 30 :**
-La classe Zoo doit intégrer une méthode `displayNumberOfAquaticsByType()` pour afficher le nombre de dauphins et de pingouins dans le zoo.
-
-**Instruction 31 :**
-Il est demandé de redéfinir la méthode `equals()` dans la classe Aquatic pour définir l'égalité entre deux animaux aquatiques en se basant sur leur nom, leur âge et leur habitat.
-
-Ce prosit vise à enrichir la gestion spécifique des animaux aquatiques dans le zoo, en incluant la possibilité d'ajouter, afficher et interagir avec eux de manière plus détaillée et spécifique.
+Ce prosit vise à créer des interfaces pour définir les comportements alimentaires des animaux (carnivore, herbivore, omnivore) et à les implémenter dans différentes classes d'animaux, en utilisant une énumération pour spécifier le type de nourriture et tester ces implémentations dans la méthode principale.
