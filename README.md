@@ -1,7 +1,7 @@
-Prosit 9 :
+JavaEsprit Prosit 10 :///
 
-Ce prosit concerne le développement d'une application de gestion des employés pour une société tunisienne. Chaque employé est caractérisé par plusieurs attributs tels qu'un identifiant, un nom, un prénom, un département et un grade. La classe employé inclut des constructeurs, des méthodes getters & setters, des redéfinitions de méthodes telles que equals et toString pour comparer et afficher les employés.
+Ce prosit concerne la création d'une classe Département caractérisée par un identifiant, un nom de département et un nombre d'employés. Cette classe inclut des constructeurs, une redéfinition de la méthode equals pour tester l'égalité entre départements en fonction de l'ID et du nom, ainsi qu'une redéfinition de la méthode toString.
 
-Une interface IGestion est spécifiée, offrant un ensemble de méthodes pour gérer les employés : ajouter, rechercher, supprimer, afficher et trier. Cette interface utilise les génériques pour assurer une gestion flexible des entités.
+En parallèle, il est demandé de créer une interface IDépartement pour une meilleure gestion des entités. Cette interface spécifie des méthodes pour ajouter, rechercher, supprimer, afficher et trier les départements en utilisant des génériques pour assurer une flexibilité dans la gestion des données. En particulier, la méthode trierDepartementById doit retourner un TreeSet trié par identifiant.
 
-La tâche principale de ce prosit est de créer une classe SocieteArrayList qui implémente l'interface IGestion. Cette classe utilise une structure de données de type ArrayList pour gérer la liste des employés, en mettant en œuvre toutes les méthodes définies dans l'interface pour assurer une gestion complète et organisée des entités.
+L'objectif principal est de permettre la gestion complète des départements, en fournissant une structure et des méthodes pour ajouter, rechercher, supprimer, afficher et trier les départements selon différents critères, offrant ainsi une meilleure organisation et une gestion optimisée des entités.

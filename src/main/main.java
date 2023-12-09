@@ -1,8 +1,10 @@
 package main;
 
+
 import entities.Employe;
 import entities.IGestion;
 import entities.SocieteArrayList;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,5 +28,25 @@ public class main {
         employes.displayEmploye();  // affichage trie par id
         employes.trierEmployeParNomDépartementEtGrade();
         employes.displayEmploye();    //affichage trie par nomdep et grade
+         Departement departement1 = new Departement(1,"info",10);
+        Departement departement2 = new Departement(2,"gestion",18);
+        Departement departement3 = new Departement(3,"etudiants",100);
+        Departement departement4 = new Departement(10,"profs",40);
+
+        IDepartement<Departement> gestiondep = new DepartementHashSet();
+
+        gestiondep.ajouterDepartement(departement1);
+        gestiondep.ajouterDepartement(departement2);
+        gestiondep.ajouterDepartement(departement3);
+        gestiondep.ajouterDepartement(departement4);
+        gestiondep.displayDepartement();
+        System.out.println(gestiondep.rechercherDepartement("info"));
+        System.out.println(gestiondep.rechercherDepartement(departement1));
+        gestiondep.supprimerDepartement(departement2);
+        System.out.println("La liste aprés suppression :");
+        gestiondep.displayDepartement();
+        System.out.println("La liste triée est:");
+        System.out.println(gestiondep.trierDepartementById());
+
     }
 }

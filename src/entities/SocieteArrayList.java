@@ -7,7 +7,7 @@ public class SocieteArrayList implements IGestion<Employe>{
      @Override
     public void ajouterEmploye(Employe employe){
          employes.add(employe);
-         System.out.println("la liste des employés aprés ajout " +employes);
+
      }
     @Override
     public boolean rechercherEmploye(String nom){
@@ -25,8 +25,7 @@ public class SocieteArrayList implements IGestion<Employe>{
     }
     @Override
     public void supprimerEmploye(Employe employe) {
-      employes.remove(employe);
-        System.out.println("la liste des employés aprés suppression" +employes);
+
     }
     @Override
     public void displayEmploye() {
