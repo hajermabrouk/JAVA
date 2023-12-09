@@ -25,5 +25,3 @@ La classe Zoo doit intégrer une méthode `displayNumberOfAquaticsByType()` pour
 Il est demandé de redéfinir la méthode `equals()` dans la classe Aquatic pour définir l'égalité entre deux animaux aquatiques en se basant sur leur nom, leur âge et leur habitat.
 
 Ce prosit vise à enrichir la gestion spécifique des animaux aquatiques dans le zoo, en incluant la possibilité d'ajouter, afficher et interagir avec eux de manière plus détaillée et spécifique.
-
-
