@@ -29,9 +29,9 @@ public class Main {
         chien3.setAge(-2);  // tester instruction 18
         chien3.setMammal(true);
         //System.out.println(myZoo1.addAnimal(lion));
-      //  System.out.println(myZoo2.addAnimal(chat));
+        //  System.out.println(myZoo2.addAnimal(chat));
         myZoo1.afficherAnimal(); // appel instruction 11
-        System.out.println("l'indice est :"+ myZoo1.searchAnimal(chat)); //  instruction 11
+        System.out.println("l'indice est :" + myZoo1.searchAnimal(chat)); //  instruction 11
         System.out.println(myZoo1.addUniq(chien)); //instrurctin 12
         System.out.println(myZoo1.addUniq(lion)); // instrurctin 12
         System.out.println(myZoo1.addUniq(chat2));
@@ -39,7 +39,7 @@ public class Main {
         System.out.println(myZoo1.removeAnimal(lion));
         myZoo1.afficherAnimal();
         System.out.println(myZoo1.isZooFull());
-        System.out.println("le zoo qui contient plus d'animaux :"+ Zoo.CamparerZoo(myZoo1,myZoo2));
+        System.out.println("le zoo qui contient plus d'animaux :" + Zoo.CamparerZoo(myZoo1, myZoo2));
         // instruction 21
         /*Aquatic aquatic1= new Aquatic();
         Dolphin dolphin1 = new Dolphin();
@@ -47,12 +47,12 @@ public class Main {
         Terrestrial terrestrial1= new Terrestrial();*/
         //instruction 22
         //Aquatic aquatic1= new Aquatic("chats", "simba", 2, true,"habitat");
-        Dolphin dolphin1 = new Dolphin("poisson", "foufou", 2, true,"habitat",15.5f);
-        Penguin penguin1 = new Penguin("penguin", "foufou", 2, true,"habitat",1.5f);
-        Dolphin dolphin2 = new Dolphin("poisson2", "foufou", 2, true,"habitat",15.5f);
-        Penguin penguin2 = new Penguin("penguin", "foufou", 3, true,"habitat",2.5f);
+        Dolphin dolphin1 = new Dolphin("poisson", "foufou", 2, true, "habitat", 15.5f);
+        Penguin penguin1 = new Penguin("penguin", "foufou", 2, true, "habitat", 1.5f);
+        Dolphin dolphin2 = new Dolphin("poisson2", "foufou", 2, true, "habitat", 15.5f);
+        Penguin penguin2 = new Penguin("penguin", "foufou", 3, true, "habitat", 2.5f);
 
-        Terrestrial terrestrial1= new Terrestrial("chats", "simba", 2, true,4);
+        Terrestrial terrestrial1 = new Terrestrial("chats", "simba", 2, true, 4);
         // instruction 23
         //System.out.println(aquatic1.toString());
         System.out.println(dolphin1.toString());
@@ -77,13 +77,13 @@ public class Main {
         // instruction 32/33/34
         try {
             myZoo2.addAnimal(chien);
-            System.out.println(" Nombre d'animaux dans le Zoo: "+myZoo2.totalAnimals());
+            System.out.println(" Nombre d'animaux dans le Zoo: " + myZoo2.totalAnimals());
             myZoo2.addAnimal(chien2);
-            System.out.println(" Nombre d'animaux dans le Zoo: "+myZoo2.totalAnimals());
+            System.out.println(" Nombre d'animaux dans le Zoo: " + myZoo2.totalAnimals());
             myZoo2.addAnimal(chien3);
-            System.out.println(" Nombre d'animaux dans le Zoo: "+myZoo2.totalAnimals());
+            System.out.println(" Nombre d'animaux dans le Zoo: " + myZoo2.totalAnimals());
             myZoo2.addAnimal(lion);
-            System.out.println(" Nombre d'animaux dans le Zoo: "+myZoo2.totalAnimals());
+            System.out.println(" Nombre d'animaux dans le Zoo: " + myZoo2.totalAnimals());
         } catch (ZooFullException e) {
             System.err.println("Erreur 1 : " + e.getMessage());
         } catch (InvalidAgeException e) {
@@ -92,14 +92,19 @@ public class Main {
 
         try {
             myZoo1.addAnimal(chat);
-            System.out.println(" Nombre d'animaux dans le Zoo2: "+myZoo1.totalAnimals());
+            System.out.println(" Nombre d'animaux dans le Zoo2: " + myZoo1.totalAnimals());
         } catch (ZooFullException e) {
             System.err.println("Erreur1  : " + e.getMessage());
         } catch (InvalidAgeException e) {
             System.err.println("Erreur2 d'âge : " + e.getMessage());
         }
-        myZoo1.swimAquatic(); // instruction 27
-
+        //  myZoo1.swimAquatic(); // instruction 27
+        //instruction 38 :
+        penguin1.eatMeat(Food.MEAT);
+        penguin2.eatMeat(Food.PLANT);
+        terrestrial1.eatPlantAndMeet(Food.BOTH);
+        terrestrial1.eatMeat(Food.PLANT);
+        dolphin2.eatMeat(Food.MEAT);
 
     }
 }
