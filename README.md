@@ -1,15 +1,29 @@
 # JavaEsprit
-Prosit 4 :
+Prosit 6 :
 
-Ce prosit se concentre sur l'amélioration et la sécurisation du code dans le logiciel de gestion de zoo en Java.
+Ce prosit se concentre sur l'expansion de la logique de gestion des animaux aquatiques dans le logiciel de zoo en Java.
 
-Instruction 17 :
-La tâche consiste à modifier la méthode addAnimal dans la classe Zoo en y intégrant la méthode isZooFull() précédemment créée. Ceci garantira que l'ajout d'un nouvel animal respecte la limite de capacité du zoo définie par la méthode isZooFull().
+**Instruction 25 :**
+La classe Zoo doit maintenant inclure un tableau `aquaticAnimals` pour stocker jusqu'à 10 animaux aquatiques.
 
-Instruction 18 :
-La demande est de restreindre l'accès aux attributs des classes Animal et Zoo pour garantir l'intégrité des données. Deux contraintes doivent être respectées : les animaux ne peuvent pas avoir un âge négatif et le nom d'un zoo ne peut être vide. Il est nécessaire de corriger ces erreurs potentielles en implémentant des vérifications pour ces conditions dans les classes correspondantes.
+**Instruction 26 :**
+Une méthode `addAquaticAnimal(Aquatic aquatic)` doit être créée dans la classe Zoo pour ajouter des animaux aquatiques au tableau `aquaticAnimals`. Dans la méthode main, des animaux aquatiques doivent être ajoutés dans un zoo spécifique.
 
-Instruction 19 :
-Dans un souci d'organisation du code, il est demandé d'utiliser des packages distincts, "tn.esprit.gestionzoo.main" et "tn.esprit.gestionzoo.entities", pour regrouper les différentes classes du logiciel. Cette structuration par packages permettra une meilleure organisation et une plus grande lisibilité du code source.
+**Instruction 27 :**
+Il est demandé d'appeler la méthode `swim()` pour tous les animaux aquatiques du zoo dans la méthode main et d'observer leur comportement.
+
+**Instruction 28 :**
+La méthode `swim()` de la classe Aquatic doit être modifiée pour devenir une méthode abstraite, obligeant ainsi sa redéfinition dans toutes les sous-classes.
+
+**Instruction 29 :**
+Une méthode `maxPenguinSwimmingDepth()` doit être créée dans la classe Zoo pour renvoyer la profondeur maximale de nage des pingouins dans le zoo.
+
+**Instruction 30 :**
+La classe Zoo doit intégrer une méthode `displayNumberOfAquaticsByType()` pour afficher le nombre de dauphins et de pingouins dans le zoo.
+
+**Instruction 31 :**
+Il est demandé de redéfinir la méthode `equals()` dans la classe Aquatic pour définir l'égalité entre deux animaux aquatiques en se basant sur leur nom, leur âge et leur habitat.
+
+Ce prosit vise à enrichir la gestion spécifique des animaux aquatiques dans le zoo, en incluant la possibilité d'ajouter, afficher et interagir avec eux de manière plus détaillée et spécifique.
 
 
