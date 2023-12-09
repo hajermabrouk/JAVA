@@ -1,7 +1,9 @@
 package tn.esprit.gestionZoo.main;
 
-import tn.esprit.gestionZoo.entities.Animal;
-import tn.esprit.gestionZoo.entities.Zoo;
+import tn.esprit.gestionZoo.entities.*;
+
+import java.sql.SQLOutput;
+
 
 public class Main {
 
@@ -38,6 +40,42 @@ public class Main {
         myZoo1.afficherAnimal();
         System.out.println(myZoo1.isZooFull());
         System.out.println("le zoo qui contient plus d'animaux :"+ Zoo.CamparerZoo(myZoo1,myZoo2));
+        // instruction 21
+        /*Aquatic aquatic1= new Aquatic();
+        Dolphin dolphin1 = new Dolphin();
+        Penguin penguin1 = new Penguin();
+        Terrestrial terrestrial1= new Terrestrial();*/
+        //instruction 22
+        //Aquatic aquatic1= new Aquatic("chats", "simba", 2, true,"habitat");
+        Dolphin dolphin1 = new Dolphin("poisson", "foufou", 2, true,"habitat",15.5f);
+        Penguin penguin1 = new Penguin("penguin", "foufou", 2, true,"habitat",1.5f);
+        Dolphin dolphin2 = new Dolphin("poisson2", "foufou", 2, true,"habitat",15.5f);
+        Penguin penguin2 = new Penguin("penguin", "foufou", 3, true,"habitat",2.5f);
+
+        Terrestrial terrestrial1= new Terrestrial("chats", "simba", 2, true,4);
+        // instruction 23
+        //System.out.println(aquatic1.toString());
+        System.out.println(dolphin1.toString());
+        System.out.println(penguin1.toString());
+        //instruction 24
+        //aquatic1.swim();
+        //dolphin2.swim();
+        //dolphin1.swim();
+        //penguin1.swim();
+
+        myZoo1.addAquaticAnimal(penguin1);//instruction 26
+        myZoo1.addAquaticAnimal(penguin2);//instruction 26
+        myZoo1.addAquaticAnimal(dolphin2);
+        myZoo1.afficherAquatic();
+
+        System.out.println(myZoo1.maxPenguinSwimmingDepth()); // instruction 29
+        myZoo1.displayNumberOfAquaticsByType(); // instruction 30
+        System.out.println(penguin2.equals(dolphin1)); //instruction 31
+        System.out.println(dolphin1.equals(dolphin1));
+        System.out.println(penguin1.equals(penguin1));
+
+        myZoo1.swimAquatic(); // instruction 27
+
 
     }
 }
