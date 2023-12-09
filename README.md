@@ -1,15 +1,19 @@
 # JavaEsprit
-Prosit 4 :
+Prosit 5 :
 
-Ce prosit se concentre sur l'amélioration et la sécurisation du code dans le logiciel de gestion de zoo en Java.
+Ce prosit poursuit le développement du logiciel de gestion de zoo en Java en introduisant deux nouvelles familles d'animaux : Aquatiques et Terrestres. Chaque famille a des attributs spécifiques : les animaux aquatiques sont caractérisés par leur habitat, tandis que les animaux terrestres sont définis par le nombre de pattes. En outre, des sous-classes sont créées pour des animaux aquatiques spécifiques : le dauphin et le pingouin, chacun ayant des attributs supplémentaires spécifiques tels que la vitesse de nage et la profondeur de nage.
 
-Instruction 17 :
-La tâche consiste à modifier la méthode addAnimal dans la classe Zoo en y intégrant la méthode isZooFull() précédemment créée. Ceci garantira que l'ajout d'un nouvel animal respecte la limite de capacité du zoo définie par la méthode isZooFull().
+**Instruction 20 :**
+Cette étape consiste à déclarer les attributs spécifiques des classes Animal, Aquatic et Terrestrial ainsi que des sous-classes Dolphin et Penguin.
 
-Instruction 18 :
-La demande est de restreindre l'accès aux attributs des classes Animal et Zoo pour garantir l'intégrité des données. Deux contraintes doivent être respectées : les animaux ne peuvent pas avoir un âge négatif et le nom d'un zoo ne peut être vide. Il est nécessaire de corriger ces erreurs potentielles en implémentant des vérifications pour ces conditions dans les classes correspondantes.
+**Instruction 21 :**
+Dans la méthode main, des instances de chaque classe sont créées en utilisant les constructeurs par défaut.
 
-Instruction 19 :
-Dans un souci d'organisation du code, il est demandé d'utiliser des packages distincts, "tn.esprit.gestionzoo.main" et "tn.esprit.gestionzoo.entities", pour regrouper les différentes classes du logiciel. Cette structuration par packages permettra une meilleure organisation et une plus grande lisibilité du code source.
+**Instruction 22 :**
+Les constructeurs paramétrés doivent être créés dans les sous-classes Dolphin et Penguin tout en protégeant les attributs déclarés précédemment pour maintenir l'intégrité des données.
 
+**Instruction 23 :**
+Il est nécessaire de redéfinir la méthode `toString()` dans les sous-classes pour inclure à la fois les attributs communs et les attributs spécifiques à chaque type d'animal. Ensuite, dans la méthode main, les objets créés précédemment doivent être affichés.
 
+**Instruction 24 :**
+La création d'une méthode `swim()` est demandée dans les classes Aquatic, Dolphin et Penguin pour afficher un message spécifique décrivant l'action de nage. Il faut ensuite appeler cette méthode pour des objets de types Aquatic, Dolphin et Penguin dans la méthode main pour observer leur comportement respectif.
