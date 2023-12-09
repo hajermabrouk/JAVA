@@ -1,4 +1,9 @@
 package main;
+import entities.*;
+
+
+
+import java.util.*;
 
 
 import entities.Employe;
@@ -8,6 +13,7 @@ import entities.SocieteArrayList;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class main {
     public static void main(String[] args) {
@@ -28,6 +34,7 @@ public class main {
         employes.displayEmploye();  // affichage trie par id
         employes.trierEmployeParNomDépartementEtGrade();
         employes.displayEmploye();    //affichage trie par nomdep et grade
+
          Departement departement1 = new Departement(1,"info",10);
         Departement departement2 = new Departement(2,"gestion",18);
         Departement departement3 = new Departement(3,"etudiants",100);
@@ -47,6 +54,26 @@ public class main {
         gestiondep.displayDepartement();
         System.out.println("La liste triée est:");
         System.out.println(gestiondep.trierDepartementById());
+
+        AffectationHashMap map=new AffectationHashMap();
+        map.ajouterEmployeDepartement(employe1,departement1);
+        System.out.println("Map employés et Départements");
+        map.afficherEmployesEtDepartements();
+        map.ajouterEmployeDepartement(employe1,departement4);
+        System.out.println("Map employés et Départements aprés mise à jour ");
+        map.afficherEmployesEtDepartements();
+        System.out.println("liste des departements");
+        map.afficherDepartements();
+        System.out.println("liste des employés");
+        map.afficherEmployes();
+        map.ajouterEmployeDepartement(employe2,departement4);
+        map.supprimerEmploye(employe2);
+        map.supprimerEmployeEtDepartement(employe2,departement1);
+        System.out.println(map.rechercherEmploye(employe1));
+        System.out.println(map.rechercherDepartement(departement1));
+        map.ajouterEmployeDepartement(employe2,departement4);
+        System.out.println("map des départements et employés");
+        System.out.println(map.trierMap());
 
     }
 }

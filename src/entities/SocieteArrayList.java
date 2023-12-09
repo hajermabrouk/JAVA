@@ -26,6 +26,12 @@ public class SocieteArrayList implements IGestion<Employe>{
     @Override
     public void supprimerEmploye(Employe employe) {
 
+       if (employes.remove(employe))
+        System.out.println("la liste des employés aprés suppression" +employes);
+
+       else
+           System.out.println("l'element ne setrouve pas ");
+
     }
     @Override
     public void displayEmploye() {
